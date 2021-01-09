@@ -2,6 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/booklist', function () {
+Route::get('/', function () {
     return view('books.index');
 });
