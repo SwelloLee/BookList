@@ -11,7 +11,7 @@
 
             <div class="w-full bg-white p-6 rounded-lg">
 
-                <h3 class="font-semibold mb-4">Add Book</h3>
+                <h3 class="font-semibold mb-4">Edit Book</h3>
 
                 <form action="{{ route('editbooks') }}" method="post">
 
