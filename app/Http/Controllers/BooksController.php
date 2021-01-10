@@ -19,6 +19,6 @@ class BooksController extends Controller
     {
         $book->delete();
 
-        return back();
+        return back()->with('success', 'Book successfully deleted');
     }
 }

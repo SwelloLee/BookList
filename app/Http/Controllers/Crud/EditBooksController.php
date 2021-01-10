@@ -13,13 +13,25 @@ class EditBooksController extends Controller
         return view('crud.edit');
     }
 
-    public function edit(Request $request)
+    public function update(Request $request)
     {
         $this->validate($request, [
             'title' => ['required', 'max:255'],
             'author' => ['required', 'max:255'],
         ]);
 
-        dd($request->title);
+        Book::whereId($request->bookID)->update([
+            'title' => $request->title,
+            'author' => $request->author
+        ]);
+
+        return redirect()->route('books')->with('success', 'Book successfully edited');
+    }
+
+    public function show(Book $book)
+    {
+        return view('crud.edit', [
+            'book' => $book
+        ]);
     }
 }

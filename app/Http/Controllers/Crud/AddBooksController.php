@@ -25,6 +25,6 @@ class AddBooksController extends Controller
             'author' => $request->author
         ]);
 
-        return back();
+        return redirect()->route('books')->with('success', 'Book successfully added');
     }
 }
