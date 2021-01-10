@@ -14,4 +14,11 @@ class BooksController extends Controller
             'books' => $books
         ]);
     }
+
+    public function delete(Book $book)
+    {
+        $book->delete();
+
+        return back();
+    }
 }

@@ -6,9 +6,10 @@ use App\Http\Controllers\EditBooksController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/add', [AddBooksController::class, 'index'])->name('addbooks');
-Route::post('/add', [AddBooksController::class, 'store']);
+Route::post('/add', [AddBooksController::class, 'add']);
 
 Route::get('/edit', [EditBooksController::class, 'index'])->name('editbooks');
-Route::post('/edit', [EditBooksController::class, 'store']);
+Route::post('/edit', [EditBooksController::class, 'edit']);
 
 Route::get('/', [BooksController::class, 'index'])->name('books');
+Route::delete('/{book}', [BooksController::class, 'delete'])->name('books.delete');

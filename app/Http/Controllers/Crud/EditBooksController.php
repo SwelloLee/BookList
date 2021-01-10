@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Crud;
 
 use App\Http\Controllers\Controller;
+use App\Models\Book;
 use Illuminate\Http\Request;
 
 class EditBooksController extends Controller
@@ -12,7 +13,7 @@ class EditBooksController extends Controller
         return view('crud.edit');
     }
 
-    public function store(Request $request)
+    public function edit(Request $request)
     {
         $this->validate($request, [
             'title' => ['required', 'max:255'],

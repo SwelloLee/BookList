@@ -13,7 +13,7 @@ class AddBooksController extends Controller
         return view('crud.add');
     }
 
-    public function store(Request $request)
+    public function add(Request $request)
     {
         $this->validate($request, [
             'title' => ['required', 'max:255'],

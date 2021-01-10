@@ -26,7 +26,11 @@
                             </div>
                             <div class="w-1/5 flex justify-end">
                                 <a class="bg-green-500 text-white px-4 py-2 rounded font-medium mr-2">Edit</a>
-                                <button class="bg-red-500 text-white px-4 py-2 rounded font-medium">Delete</button>
+                                <form action="{{ route('books.delete', $book) }}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded font-medium">Delete</button>
+                                </form>
                             </div>
                         </div>
                     @endforeach
