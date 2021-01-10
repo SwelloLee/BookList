@@ -18,7 +18,7 @@
 
             <ul class="flex items center">
                 <li>
-                    <a href="{{ route('addbooks') }}" class="p-3 bg-blue-500 text-white px-4 py-2 rounded font-medium">Add Book</a>
+                    <a href="{{ route('addbooks') }}" class="p-3 bg-blue-500 text-white px-4 py-2 rounded font-medium transition-colors hover:bg-blue-400">Add Book</a>
                 </li>
             </ul>
         </nav>
