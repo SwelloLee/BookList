@@ -12,4 +12,3 @@ Route::get('/edit', [EditBooksController::class, 'index'])->name('editbooks');
 Route::post('/edit', [EditBooksController::class, 'store']);
 
 Route::get('/', [BooksController::class, 'index'])->name('books');
-Route::post('/', [BooksController::class, 'store']);

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Crud;
 
 use App\Http\Controllers\Controller;
+use App\Models\Book;
 use Illuminate\Http\Request;
 
 class AddBooksController extends Controller
@@ -19,6 +20,11 @@ class AddBooksController extends Controller
             'author' => ['required', 'max:255'],
         ]);
 
-        dd($request->title);
+        Book::create([
+            'title' => $request->title,
+            'author' => $request->author
+        ]);
+
+        return back();
     }
 }
