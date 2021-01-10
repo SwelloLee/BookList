@@ -14,5 +14,6 @@ Route::post('/edit/{book}', [EditBooksController::class, 'show'])->name('editboo
 
 Route::get('/', [BooksController::class, 'index'])->name('books');
 Route::post('/', [BooksController::class, 'sort']);
+Route::get('/test', [BooksController::class, 'export']);
 Route::post('/', [BooksController::class, 'search'])->name('books.search');
 Route::delete('/{book}', [BooksController::class, 'delete'])->name('books.delete');

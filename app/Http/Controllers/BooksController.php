@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Book;
+use App\Exports\BooksExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class BooksController extends Controller
 {
@@ -42,6 +44,11 @@ class BooksController extends Controller
         return view('books.index', [
             'books' => $books
         ]);
+    }
+
+    public function export()
+    {
+        return Excel::download(new BooksExport, 'books.xml');
     }
 
 }
