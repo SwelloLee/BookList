@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="flex justify-center">
-        <div class="w-8/12 bg-white p-6 rounded-lg">
+        <div class="w-8/12 bg-white p-6 rounded-lg mb-6">
 
             @if(Session::has('success'))
                 <div class="w-full bg-green-400 text-white rounded p-4 mb-4 font-medium">{{ Session::get('success') }}</div>
@@ -23,7 +23,7 @@
 
                     <label for="search" class="sr-only">Title</label>
                     <input name="search" id="search" class="bg-gray-100 border-2 w-full p-2 mx-2 rounded" placeholder="Search" value="{{old('search')}}">
-                    <button type="submit" class="bg-blue-500 text-white p-2 rounded align-middle font-semibold transition-colors hover:bg-blue-400">Search</button>
+                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded align-middle font-semibold transition-colors hover:bg-blue-400">Search</button>
 
                 </form>
             </div>
@@ -75,6 +75,8 @@
 
 
             <div class="px-4">{{$books->links()}}</div>
+
+            <a href="{{ route('exportbooks') }}" class="w-100 bg-blue-500 text-white text-center mt-4 px-4 py-2 rounded float-right font-semibold transition-colors hover:bg-blue-400">Export</a>
 
         </div>
     </div>

@@ -13,8 +13,22 @@ class BooksExport implements FromQuery
     /**
     * @return \Illuminate\Support\Collection
     */
+
+    private $list;
+
+    public function __construct(string $list)
+    {
+        $this->list = $list;
+    }
+
     public function query()
     {
-        return Book::query()->select('title','author');
+        if($this->list == 'title'){
+            return Book::query()->select('title');
+        }else if($this->list == 'author'){
+            return Book::query()->select('author');
+        }else if($this->list == 'titleauth'){
+            return Book::query()->select('title','author');
+        }
     }
 }
