@@ -27,7 +27,7 @@ class BooksExport implements FromQuery
             return Book::query()->select('title');
         }else if($this->list == 'author'){
             return Book::query()->select('author');
-        }else if($this->list == 'titleauth'){
+        }else if($this->list == 'title-author'){
             return Book::query()->select('title','author');
         }
     }

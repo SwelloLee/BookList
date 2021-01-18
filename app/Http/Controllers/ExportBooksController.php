@@ -17,8 +17,11 @@ class ExportBooksController extends Controller
 
     public function export(Request $request)
     {
+
+        $filename = 'Books-' . $request->list;
+
         if($request->file == 'csv'){
-            return Excel::download(new BooksExport($request->list), 'books.csv');
+            return Excel::download(new BooksExport($request->list), $filename.'.csv');
         } else {
 
             $books = Book::all();
@@ -33,10 +36,10 @@ class ExportBooksController extends Controller
             // Data what goes in your element\
             foreach ($books as $book) {
                 $xml->startElement('Books');
-                if($request->list == 'title' || $request->list == 'titleauth' ){
+                if($request->list == 'title' || $request->list == 'title-author' ){
                     $xml->writeAttribute('title', $book->title);
                 }
-                if($request->list == 'author' || $request->list == 'titleauth' ){
+                if($request->list == 'author' || $request->list == 'title-author' ){
                     $xml->writeAttribute('author', $book->author);
                 }
                 $xml->endElement();
@@ -50,8 +53,8 @@ class ExportBooksController extends Controller
             // Reset XML just in case
             $xml = null;
 
-            Storage::put('books.xml',$contents);
-            return Storage::download('books.xml');
+            Storage::put($filename . '.xml',$contents);
+            return Storage::download($filename . '.xml');
         }
     }
 }

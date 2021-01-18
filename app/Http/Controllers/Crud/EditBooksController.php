@@ -8,9 +8,11 @@ use Illuminate\Http\Request;
 
 class EditBooksController extends Controller
 {
-    public function index()
+    public function index(Book $book)
     {
-        return view('crud.edit');
+        return view('crud.edit', [
+            'book' => $book
+        ]);
     }
 
     public function update(Request $request)
