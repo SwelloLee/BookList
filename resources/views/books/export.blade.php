@@ -3,7 +3,7 @@
 @section('content')
     <div class="flex justify-center">
 
-        <div class="w-1/4">
+        <div class="md:w-1/4 w-11/12">
 
             <div class="w-full mb-2">
                 <a href="{{ route('books') }}" class="text-gray-400">< Back to Book List</a>

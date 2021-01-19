@@ -25,15 +25,13 @@ class ExportBooksController extends Controller
         } else {
 
             $books = Book::all();
-
             $xml = new \XMLWriter();
+
             $xml->openMemory();
             $xml->setIndent(true);
-            // Start a new document
             $xml->startDocument();
-            // Start a element to put data in
             $xml->startElement('BookList');
-            // Data what goes in your element\
+
             foreach ($books as $book) {
                 $xml->startElement('Books');
                 if($request->list == 'title' || $request->list == 'title-author' ){
@@ -48,9 +46,7 @@ class ExportBooksController extends Controller
             $xml->endElement();
             $xml->endDocument();
 
-            // You put the XML content in this variable
             $contents = $xml->outputMemory();
-            // Reset XML just in case
             $xml = null;
 
             Storage::put($filename . '.xml',$contents);
