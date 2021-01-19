@@ -1,14 +1,14 @@
 
 ## About BookList
 
-This is a simple Laravel web application styled with Tailwindcss that displays a list of books and contains the basic CRUD functionality you'd expect from an application like this. 
+This is a simple Laravel web application styled with Tailwindcss that displays a list of books and contains the basic CRUD functionalities you'd expect from an application like this. 
 
 
 ## Features
 
 This iteration of the program comes with the ability to:
 
-- Search through the book records for an entry by title or author.
+- Search through the records for an entry by title or author.
 - Sort the results by book title or author.
 - Add a new record to the list of books.
 - Edit an existing record.
@@ -23,15 +23,15 @@ For sorting, you can choose to either sort in ascending or descending order. For
 Check out the app over on http://swello-book-list.herokuapp.com/
 
 
-## Local Deployment
+## Installation
 
 *When on windows, make sure to have XAMPP installed and to have Apache and MySQL running.*
 
 - Clone this repository into a directory with: `git clone https://github.com/SwelloLee/BookList`
 - Afterwards rename the .env.example file from the root dir to .env and fill in the variables with your database information.
-- Install composer if you havent already at your projects root directory with `composer install` on your console.
-- On your console, run `php artisan migrate:fresh --seed`
-- Finaly run `php artisan serve`
+- Install composer if you havent already at your projects root directory with `composer install`.
+- On your console, run `php artisan migrate:fresh --seed`.
+- Finaly run `php artisan serve`.
 
 Congratulations! 
 The project can then be accessed at localhost:8000
