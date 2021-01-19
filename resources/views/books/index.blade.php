@@ -52,14 +52,14 @@
                             <h3 class="w-1/3">{{ $book->author }}</h3>
                         </div>
                         <div class="lg:w-1/5 w-full mb-2 flex lg:justify-end justify-between">
-                            <form action="{{ route('editbooks.edit', $book) }}" method="post">
+                            <form action="{{ route('editbooks.edit', $book) }}" method="get">
                                 @csrf
                                 <button type="submit" class="bg-green-500 text-white px-4 py-2 mr-2 rounded font-medium transition-colors hover:bg-green-400">Edit</button>
                             </form>
                             <form action="{{ route('books.delete', $book) }}" method="post">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded font-medium transition-colors hover:bg-red-400">Delete</button>
+                                <button type="submit" onclick="return confirm('Are you sure you wish to delete this?')" class="bg-red-500 text-white px-4 py-2 rounded font-medium transition-colors hover:bg-red-400">Delete</button>
                             </form>
                         </div>
                     </div>

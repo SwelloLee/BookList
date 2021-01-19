@@ -11,7 +11,7 @@ Route::post('/add', [AddBooksController::class, 'add']);
 
 Route::get('/edit', [EditBooksController::class, 'index'])->name('editbooks');
 Route::post('/edit', [EditBooksController::class, 'update']);
-Route::post('/edit/{book}', [EditBooksController::class, 'show'])->name('editbooks.edit');
+Route::get('/edit/{book}', [EditBooksController::class, 'show'])->name('editbooks.edit');
 
 Route::get('/export', [ExportBooksController::class, 'index'])->name('exportbooks');
 Route::post('/export', [ExportBooksController::class, 'export']);
